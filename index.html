@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<!-- saved from url=(0120)file:///C:/Users/user/Downloads/%E7%B5%A6%E9%A3%9F%E6%A5%AD%E5%8B%99%E3%83%9E%E3%83%8B%E3%83%A5%E3%82%A2%E3%83%AB_3.html -->
+<html lang="ja"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>給食時業務マニュアル</title>
+<style>
+  :root {
+    --amber-50: #FAEEDA; --amber-100: #FAC775; --amber-400: #BA7517; --amber-800: #633806;
+    --teal-50: #E1F5EE; --teal-100: #9FE1CB; --teal-400: #1D9E75; --teal-800: #085041;
+    --blue-50: #E6F1FB; --blue-100: #B5D4F4; --blue-400: #378ADD; --blue-800: #0C447C;
+    --coral-50: #FAECE7; --coral-100: #F5C4B3; --coral-400: #D85A30; --coral-800: #712B13;
+    --red-50: #FCEBEB; --red-100: #F7C1C1; --red-400: #E24B4A; --red-800: #791F1F;
+    --green-50: #EAF3DE; --green-100: #C0DD97; --green-400: #639922; --green-800: #27500A;
+    --purple-50: #EEEDFE; --purple-100: #CECBF6; --purple-400: #7F77DD; --purple-800: #3C3489;
+    --gray-50: #F1EFE8; --gray-100: #D3D1C7; --gray-400: #888780; --gray-800: #444441;
+    --text-primary: #1a1a18;
+    --text-secondary: #5f5e5a;
+    --bg-primary: #ffffff;
+    --bg-secondary: #f7f6f2;
+    --bg-page: #f0ede6;
+    --border: rgba(0,0,0,0.10);
+    --border-strong: rgba(0,0,0,0.18);
+    --radius-md: 8px;
+    --radius-lg: 12px;
+    --radius-xl: 16px;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Hiragino Sans', 'Hiragino Kaku Gothic ProN', 'Noto Sans JP', sans-serif;
+    background: var(--bg-page);
+    color: var(--text-primary);
+    line-height: 1.6;
+    min-height: 100vh;
+  }
+
+  /* ── ヘッダー ── */
+  .page-header {
+    background: var(--text-primary);
+    color: #fff;
+    padding: 28px 32px 24px;
+  }
+  .header-inner { max-width: 880px; margin: 0 auto; }
+  .header-label {
+    font-size: 11px; letter-spacing: 0.12em;
+    color: rgba(255,255,255,0.5); margin-bottom: 6px;
+    text-transform: uppercase;
+  }
+  .header-title { font-size: 22px; font-weight: 500; margin-bottom: 4px; }
+  .header-sub { font-size: 13px; color: rgba(255,255,255,0.55); }
+
+  /* ── レイアウト ── */
+  .container { max-width: 880px; margin: 0 auto; padding: 24px 16px 48px; }
+
+  /* ── タブ ── */
+  .tabs {
+    display: flex; gap: 6px; margin-bottom: 20px; flex-wrap: wrap;
+  }
+  .tab {
+    padding: 7px 18px; border-radius: 99px;
+    border: 1px solid var(--border-strong);
+    background: var(--bg-primary);
+    color: var(--text-secondary);
+    font-size: 13px; font-family: inherit;
+    cursor: pointer; transition: all .15s; white-space: nowrap;
+  }
+  .tab.active {
+    background: var(--text-primary); color: #fff; border-color: transparent;
+  }
+  .tab:hover:not(.active) { background: var(--bg-secondary); }
+
+  .panel { display: none; animation: fadeIn .2s ease; }
+  .panel.active { display: block; }
+  @keyframes fadeIn { from { opacity: 0; transform: translateY(4px); } to { opacity: 1; transform: translateY(0); } }
+
+  /* ── セクションタイトル ── */
+  .section-title {
+    font-size: 11px; font-weight: 500; letter-spacing: 0.1em;
+    color: var(--text-secondary); text-transform: uppercase;
+    margin: 1.6rem 0 0.9rem;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  /* ── タイムライン ── */
+  .timeline { display: flex; flex-direction: column; gap: 0; }
+  .tl-row {
+    display: grid; grid-template-columns: 72px 12px 1fr;
+    gap: 0 14px; align-items: start; position: relative;
+  }
+  .tl-time {
+    font-size: 17px; font-weight: 500;
+    color: var(--text-primary); text-align: right;
+    padding-top: 12px; padding-bottom: 12px;
+    line-height: 1.2;
+  }
+  .tl-time .small { display: block; font-size: 10px; font-weight: 400; color: var(--text-secondary); }
+  .tl-line-col { display: flex; flex-direction: column; align-items: center; }
+  .tl-dot {
+    width: 12px; height: 12px; border-radius: 50%; flex-shrink: 0; margin-top: 15px;
+    border: 2px solid var(--bg-page);
+  }
+  .tl-vline { flex: 1; width: 2px; background: var(--border); min-height: 20px; }
+  .tl-row:last-child .tl-vline { display: none; }
+  .tl-content {
+    background: var(--bg-primary);
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--border);
+    padding: 12px 16px; margin: 8px 0 10px;
+  }
+  .tl-badge {
+    display: inline-flex; align-items: center;
+    padding: 3px 10px; border-radius: 99px; font-size: 11px; font-weight: 500;
+    margin-bottom: 6px; border: 1px solid transparent;
+  }
+  .tl-main { font-weight: 500; font-size: 15px; color: var(--text-primary); margin-bottom: 4px; }
+  .tl-sub { color: var(--text-secondary); font-size: 13px; line-height: 1.65; }
+  .announce-badge {
+    display: inline-block; background: var(--text-primary); color: #fff;
+    font-size: 11px; font-weight: 500; padding: 1px 7px; border-radius: 4px;
+    margin-left: 4px; vertical-align: middle;
+  }
+
+  /* ── 役割カード ── */
+  .role-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 14px;
+  }
+  .role-card {
+    border: 1px solid var(--border);
+    border-radius: var(--radius-xl);
+    background: var(--bg-primary);
+    overflow: hidden;
+  }
+  .role-header {
+    padding: 12px 16px; font-weight: 500; font-size: 14px;
+    display: flex; align-items: center; gap: 10px;
+  }
+  .role-icon {
+    width: 30px; height: 30px; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 13px; font-weight: 600; flex-shrink: 0;
+  }
+  .role-body { padding: 4px 16px 16px; }
+  .checklist { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+  .checklist li {
+    display: flex; gap: 10px; font-size: 13px;
+    color: var(--text-primary); line-height: 1.55; align-items: flex-start;
+  }
+  .chk {
+    display: block; flex-shrink: 0; width: 16px; height: 16px;
+    border-radius: 4px; border: 1.5px solid var(--border-strong);
+    margin-top: 1px; background: var(--bg-primary);
+    cursor: pointer; position: relative; transition: background .15s, border-color .15s;
+  }
+  .chk.checked {
+    background: var(--text-primary); border-color: var(--text-primary);
+  }
+  .chk.checked::after {
+    content: '';
+    position: absolute; left: 3px; top: 1px;
+    width: 5px; height: 9px;
+    border: 2px solid #fff; border-top: none; border-left: none;
+    transform: rotate(45deg);
+  }
+  .warn-inline {
+    display: inline-block; font-size: 11px; font-weight: 500;
+    padding: 2px 7px; border-radius: 4px;
+    background: var(--red-50); color: var(--red-800);
+    margin-top: 3px;
+  }
+
+  /* ── 個別配慮テーブル ── */
+  .care-wrap { overflow-x: auto; border-radius: var(--radius-lg); border: 1px solid var(--border); }
+  .care-table { width: 100%; border-collapse: collapse; font-size: 13px; background: var(--bg-primary); }
+  .care-table th {
+    text-align: left; padding: 10px 14px;
+    font-size: 11px; font-weight: 500; letter-spacing: 0.07em;
+    color: var(--text-secondary);
+    border-bottom: 1px solid var(--border);
+    background: var(--bg-secondary);
+    white-space: nowrap;
+  }
+  .care-table td {
+    padding: 10px 14px;
+    border-bottom: 1px solid var(--border);
+    vertical-align: top;
+  }
+  .care-table tr:last-child td { border-bottom: none; }
+  .care-table tr:hover td { background: var(--bg-secondary); }
+  .name-cell { font-weight: 500; color: var(--text-primary); white-space: nowrap; }
+  .tag {
+    display: inline-block; font-size: 11px; font-weight: 500;
+    padding: 2px 8px; border-radius: 5px; margin: 2px 3px 2px 0; white-space: nowrap;
+  }
+  .tag-allergy { background: var(--red-50); color: var(--red-800); }
+  .tag-utensil { background: var(--blue-50); color: var(--blue-800); }
+  .tag-drink   { background: var(--teal-50); color: var(--teal-800); }
+  .tag-mug     { background: var(--amber-50); color: var(--amber-800); }
+  .tag-forbid  { background: var(--coral-50); color: var(--coral-800); font-weight: 700; }
+  .tag-special { background: var(--purple-50); color: var(--purple-800); }
+  .none-cell   { color: var(--gray-400); font-size: 12px; }
+
+  /* ── 飲料早見 ── */
+  .drink-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 10px;
+  }
+  .drink-card {
+    border-radius: var(--radius-lg); padding: 12px 16px;
+    border: 1px solid transparent;
+  }
+  .drink-card-label { font-size: 12px; font-weight: 600; margin-bottom: 6px; }
+  .drink-card-names { font-size: 14px; line-height: 1.7; }
+
+  /* ── 注意事項 ── */
+  .notice-list { display: flex; flex-direction: column; gap: 10px; }
+  .notice-card {
+    display: flex; gap: 14px; align-items: flex-start;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    background: var(--bg-primary);
+    padding: 14px 16px;
+  }
+  .notice-icon {
+    width: 36px; height: 36px; border-radius: 50%; flex-shrink: 0;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 16px; font-weight: 700;
+  }
+  .notice-title { font-weight: 500; font-size: 14px; margin-bottom: 5px; color: var(--text-primary); }
+  .notice-body { font-size: 13px; color: var(--text-secondary); line-height: 1.65; }
+
+  /* ── フッター ── */
+  .page-footer {
+    text-align: center; font-size: 11px;
+    color: var(--text-secondary); padding: 24px 16px;
+    border-top: 1px solid var(--border);
+    margin-top: 32px;
+  }
+
+  @media print {
+    body { background: #fff; }
+    .tabs { display: none; }
+    .panel { display: block !important; }
+    .page-header { background: #222; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  }
+</style>
+</head>
+<body>
+
+<div class="page-header">
+  <div class="header-inner">
+    <div class="header-label">業務マニュアル</div>
+    <div class="header-title">給食時動静および個別配慮事項</div>
+    <div class="header-sub">施設における給食業務の標準化と利用者安全確保（誤食・事故防止）のために策定</div>
+  </div>
+</div>
+
+<div class="container">
+
+  <div class="tabs">
+    <button class="tab" onclick="switchTab(&#39;timeline&#39;, this)">タイムライン</button>
+    <button class="tab active" onclick="switchTab(&#39;roles&#39;, this)">役割チェックリスト</button>
+    <button class="tab" onclick="switchTab(&#39;care&#39;, this)">個別配慮一覧</button>
+    <button class="tab" onclick="switchTab(&#39;drink&#39;, this)">飲料・食器早見</button>
+    <button class="tab" onclick="switchTab(&#39;notice&#39;, this)">注意事項</button>
+  </div>
+
+  <!-- ① タイムライン -->
+  <div class="panel" id="tab-timeline">
+    <div class="section-title">給食時タイムスケジュール</div>
+    <div class="timeline">
+
+      <div class="tl-row">
+        <div class="tl-time">11:30</div>
+        <div class="tl-line-col">
+          <div class="tl-dot" style="background:var(--gray-400);"></div>
+          <div class="tl-vline"></div>
+        </div>
+        <div class="tl-content">
+          <span class="tl-badge" style="background:var(--gray-50);color:var(--gray-800);border-color:var(--gray-100);">全担当</span>
+          <div class="tl-main">給食準備開始</div>
+          <div class="tl-sub">
+            検食・準備リーダー・配膳・準備職員（2名）が各持ち場へ配置。<br>
+            個別対応：田中久・金城・白澤・里・首藤
+          </div>
+        </div>
+      </div>
+
+      <div class="tl-row">
+        <div class="tl-time">11:35<span class="small">① アナウンス</span></div>
+        <div class="tl-line-col">
+          <div class="tl-dot" style="background:var(--purple-400);"></div>
+          <div class="tl-vline"></div>
+        </div>
+        <div class="tl-content">
+          <span class="tl-badge" style="background:var(--purple-50);color:var(--purple-800);border-color:var(--purple-100);">準備リーダー（中心）</span>
+          <div class="tl-main">① 田中喬さんへの対応開始 <span class="announce-badge">①</span></div>
+          <div class="tl-sub">田中喬さんが定位置へ戻るまで継続対応。完了後は次の準備へ移行。</div>
+        </div>
+      </div>
+
+      <div class="tl-row">
+        <div class="tl-time">11:38<span class="small">② アナウンス</span></div>
+        <div class="tl-line-col">
+          <div class="tl-dot" style="background:var(--teal-400);"></div>
+          <div class="tl-vline"></div>
+        </div>
+        <div class="tl-content">
+          <span class="tl-badge" style="background:var(--teal-50);color:var(--teal-800);border-color:var(--teal-100);">早食対応職員（食事介助含む）</span>
+          <div class="tl-main">② 早食・食事介助対応開始 <span class="announce-badge">②</span></div>
+          <div class="tl-sub">山本さん・葛野さん・三木さんへの対応（食事介助含む）。</div>
+        </div>
+      </div>
+
+      <div class="tl-row">
+        <div class="tl-time">11:40<span class="small">③ アナウンス</span></div>
+        <div class="tl-line-col">
+          <div class="tl-dot" style="background:var(--amber-400);"></div>
+          <div class="tl-vline"></div>
+        </div>
+        <div class="tl-content">
+          <span class="tl-badge" style="background:var(--amber-50);color:var(--amber-800);border-color:var(--amber-100);">その他職員</span>
+          <div class="tl-main">③ 全利用者の食堂誘導・着席確認 <span class="announce-badge">③</span></div>
+          <div class="tl-sub">全員の着席を確認し、漏れがないよう相互確認。</div>
+        </div>
+      </div>
+
+      <div class="tl-row">
+        <div class="tl-time">12:00<span class="small">④ アナウンス</span></div>
+        <div class="tl-line-col">
+          <div class="tl-dot" style="background:var(--blue-400);"></div>
+          <div class="tl-vline"></div>
+        </div>
+        <div class="tl-content">
+          <span class="tl-badge" style="background:var(--blue-50);color:var(--blue-800);border-color:var(--blue-100);">全職員</span>
+          <div class="tl-main">④ 職員食の声掛け・案内 <span class="announce-badge">④</span></div>
+          <div class="tl-sub">準備リーダーがアナウンス（①〜④）を所定のタイミングで実施済みか確認。</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ② 役割チェックリスト -->
+  <div class="panel active" id="tab-roles">
+    <div class="section-title">役割別チェックリスト</div>
+    <div class="role-grid">
+
+      <div class="role-card">
+        <div class="role-header" style="background:var(--purple-50);">
+          <div class="role-icon" style="background:var(--purple-100);color:var(--purple-800);">L</div>
+          <span style="color:var(--purple-800);">準備リーダー</span>
+        </div>
+        <div class="role-body">
+          <ul class="checklist">
+            <li><span class="chk"></span><span>田中久・白澤・里・首藤さんへ声掛け</span></li>
+            <li><span class="chk checked"></span><span>薬の確認 → 食堂誘導後トレーへ配膳</span></li>
+            <li><span class="chk"></span><span>エプロン・タオルを食堂へ準備</span></li>
+            <li><span class="chk"></span><span>トレーを各テーブルへ配膳</span></li>
+            <li><span class="chk"></span><span>アナウンス①②③④を所定タイミングで実施</span></li>
+            <li>
+              <span class="chk"></span>
+              <span>
+                中村さんへ状況に応じた言葉掛け（臨機応変）<br>
+                <span class="warn-inline">手が離せない場合→即・他職員へ応援依頼</span>
+              </span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="role-card">
+        <div class="role-header" style="background:var(--teal-50);">
+          <div class="role-icon" style="background:var(--teal-100);color:var(--teal-800);">配</div>
+          <span style="color:var(--teal-800);">配膳担当</span>
+        </div>
+        <div class="role-body">
+          <ul class="checklist">
+            <li><span class="chk"></span><span>飲料の種類・容器が正確か確認（「飲料・食器早見」タブ参照）</span></li>
+            <li><span class="chk"></span><span>カウンターでトレーを利用者へ直接手渡し</span></li>
+            <li>
+              <span class="chk"></span>
+              <span>
+                アレルギー・特殊食器を最終確認<br>
+                <span class="warn-inline">指差し確認 必須</span>
+              </span>
+            </li>
+            <li>
+              <span class="chk"></span>
+              <span>
+                喫食状況を一覧表へ記入<br>
+                <span class="warn-inline">「後で書く」は厳禁・即時記入</span>
+              </span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="role-card">
+        <div class="role-header" style="background:var(--amber-50);">
+          <div class="role-icon" style="background:var(--amber-100);color:var(--amber-800);">準</div>
+          <span style="color:var(--amber-800);">準備担当（2〜3名）</span>
+        </div>
+        <div class="role-body">
+          <ul class="checklist">
+            <li><span class="chk"></span><span>里さんを食堂へ誘導</span></li>
+            <li><span class="chk"></span><span>「むつみ」利用者の椅子配置を確認</span></li>
+            <li><span class="chk"></span><span>自助食器を準備・配膳（安部・金城・小阪）</span></li>
+            <li>
+              <span class="chk"></span>
+              <span>
+                薬チェック担当者がトレー上の薬をダブルチェック<br>
+                <span class="warn-inline">ダブルチェック必須</span>
+              </span>
+            </li>
+            <li><span class="chk"></span><span>トレーを各テーブルへ配膳</span></li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ③ 個別配慮一覧 -->
+  <div class="panel" id="tab-care">
+    <div class="section-title">個別配慮事項一覧（アレルギー・食器・飲料）</div>
+    <div class="care-wrap">
+      <table class="care-table">
+        <thead>
+          <tr>
+            <th>利用者</th>
+            <th>アレルギー</th>
+            <th>食器</th>
+            <th>飲料</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="name-cell">葛野</td>
+            <td><span class="tag tag-allergy">金属</span></td>
+            <td class="none-cell">—</td>
+            <td><span class="tag tag-mug">青マグ1</span><span class="tag tag-mug">スープ（青マグ）</span></td>
+          </tr>
+          <tr>
+            <td class="name-cell">松並</td>
+            <td><span class="tag tag-allergy">甲殻類</span><span class="tag tag-allergy">貝類</span><span class="tag tag-allergy">そば</span><span class="tag tag-allergy">山芋</span></td>
+            <td class="none-cell">—</td>
+            <td class="none-cell">—</td>
+          </tr>
+          <tr>
+            <td class="name-cell">金城</td>
+            <td class="none-cell">—</td>
+            <td><span class="tag tag-forbid">フォーク禁止</span><span class="tag tag-utensil">大スプーン×2</span><span class="tag tag-special">自助食器</span></td>
+            <td class="none-cell">—</td>
+          </tr>
+          <tr>
+            <td class="name-cell">安部</td>
+            <td class="none-cell">—</td>
+            <td><span class="tag tag-utensil">大スプーン×2</span><span class="tag tag-special">自助食器</span></td>
+            <td><span class="tag tag-mug">青マグ1</span></td>
+          </tr>
+          <tr>
+            <td class="name-cell">小阪</td>
+            <td class="none-cell">—</td>
+            <td><span class="tag tag-utensil">大スプーン×2</span><span class="tag tag-special">自助食器</span></td>
+            <td class="none-cell">—</td>
+          </tr>
+          <tr>
+            <td class="name-cell">田中喬</td>
+            <td class="none-cell">—</td>
+            <td><span class="tag tag-utensil">大スプーン</span><span class="tag tag-utensil">フォーク</span></td>
+            <td><span class="tag tag-mug">スープ（青マグ）</span></td>
+          </tr>
+          <tr>
+            <td class="name-cell">北角</td>
+            <td class="none-cell">—</td>
+            <td><span class="tag tag-utensil">大スプーン</span><span class="tag tag-utensil">フォーク</span></td>
+            <td class="none-cell">—</td>
+          </tr>
+          <tr>
+            <td class="name-cell">藤田</td>
+            <td class="none-cell">—</td>
+            <td><span class="tag tag-utensil">大スプーン</span><span class="tag tag-utensil">フォーク</span></td>
+            <td><span class="tag tag-drink">水</span></td>
+          </tr>
+          <tr>
+            <td class="name-cell">山本</td>
+            <td class="none-cell">—</td>
+            <td class="none-cell">—</td>
+            <td><span class="tag tag-mug">青マグ1</span></td>
+          </tr>
+          <tr>
+            <td class="name-cell">岩田</td>
+            <td class="none-cell">—</td>
+            <td class="none-cell">—</td>
+            <td><span class="tag tag-special">空の青マグ（服薬用飲料水）</span></td>
+          </tr>
+          <tr>
+            <td class="name-cell">植田</td>
+            <td class="none-cell">—</td>
+            <td class="none-cell">—</td>
+            <td><span class="tag tag-mug">青マグ2（温茶・冷茶）</span></td>
+          </tr>
+          <tr>
+            <td class="name-cell">島袋</td>
+            <td class="none-cell">—</td>
+            <td class="none-cell">—</td>
+            <td><span class="tag tag-mug">スープ（青マグ）</span></td>
+          </tr>
+          <tr>
+            <td class="name-cell">三木</td>
+            <td class="none-cell">—</td>
+            <td class="none-cell">—</td>
+            <td><span class="tag tag-drink">温茶</span></td>
+          </tr>
+          <tr>
+            <td class="name-cell">岡山</td>
+            <td class="none-cell">—</td>
+            <td class="none-cell">—</td>
+            <td><span class="tag tag-drink">水</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- ④ 飲料・食器早見 -->
+  <div class="panel" id="tab-drink">
+    <div class="section-title">飲料容器の区分と対象者</div>
+    <div class="drink-grid">
+      <div class="drink-card" style="background:var(--amber-50);border-color:var(--amber-100);">
+        <div class="drink-card-label" style="color:var(--amber-800);">青マグカップ 1</div>
+        <div class="drink-card-names" style="color:var(--amber-400);">安部・山本・葛野</div>
+      </div>
+      <div class="drink-card" style="background:var(--amber-50);border-color:var(--amber-100);">
+        <div class="drink-card-label" style="color:var(--amber-800);">青マグカップ 2（温茶・冷茶）</div>
+        <div class="drink-card-names" style="color:var(--amber-400);">植田</div>
+      </div>
+      <div class="drink-card" style="background:var(--teal-50);border-color:var(--teal-100);">
+        <div class="drink-card-label" style="color:var(--teal-800);">スープ（青マグカップ）</div>
+        <div class="drink-card-names" style="color:var(--teal-400);">島袋・葛野・田中喬</div>
+      </div>
+      <div class="drink-card" style="background:var(--blue-50);border-color:var(--blue-100);">
+        <div class="drink-card-label" style="color:var(--blue-800);">温茶</div>
+        <div class="drink-card-names" style="color:var(--blue-400);">三木</div>
+      </div>
+      <div class="drink-card" style="background:var(--gray-50);border-color:var(--gray-100);">
+        <div class="drink-card-label" style="color:var(--gray-800);">水</div>
+        <div class="drink-card-names" style="color:var(--gray-400);">岡山・藤田</div>
+      </div>
+      <div class="drink-card" style="background:var(--purple-50);border-color:var(--purple-100);">
+        <div class="drink-card-label" style="color:var(--purple-800);">空の青マグ（服薬用飲料水）</div>
+        <div class="drink-card-names" style="color:var(--purple-400);">岩田</div>
+      </div>
+    </div>
+
+    <div class="section-title" style="margin-top:1.6rem;">特殊食器が必要な利用者</div>
+    <div class="drink-grid">
+      <div class="drink-card" style="background:var(--coral-50);border-color:var(--coral-100);">
+        <div class="drink-card-label" style="color:var(--coral-800);">フォーク禁止 ＋ 大スプーン×2 ＋ 自助食器</div>
+        <div class="drink-card-names" style="color:var(--coral-400);">金城</div>
+      </div>
+      <div class="drink-card" style="background:var(--blue-50);border-color:var(--blue-100);">
+        <div class="drink-card-label" style="color:var(--blue-800);">大スプーン×2 ＋ 自助食器</div>
+        <div class="drink-card-names" style="color:var(--blue-400);">安部・小阪</div>
+      </div>
+      <div class="drink-card" style="background:var(--teal-50);border-color:var(--teal-100);">
+        <div class="drink-card-label" style="color:var(--teal-800);">大スプーン ＋ フォーク</div>
+        <div class="drink-card-names" style="color:var(--teal-400);">田中喬・北角・藤田</div>
+      </div>
+    </div>
+
+    <div class="section-title" style="margin-top:1.6rem;">アレルギーのある利用者</div>
+    <div class="drink-grid">
+      <div class="drink-card" style="background:var(--red-50);border-color:var(--red-100);">
+        <div class="drink-card-label" style="color:var(--red-800);">金属アレルギー</div>
+        <div class="drink-card-names" style="color:var(--red-400);">葛野 ※専用青マグカップ使用</div>
+      </div>
+      <div class="drink-card" style="background:var(--red-50);border-color:var(--red-100);">
+        <div class="drink-card-label" style="color:var(--red-800);">甲殻類・貝類・そば・山芋アレルギー</div>
+        <div class="drink-card-names" style="color:var(--red-400);">松並</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ⑤ 注意事項 -->
+  <div class="panel" id="tab-notice">
+    <div class="section-title">現場における重要注意事項</div>
+    <div class="notice-list">
+      <div class="notice-card">
+        <div class="notice-icon" style="background:var(--red-50);color:var(--red-800);">!</div>
+        <div>
+          <div class="notice-title">アレルギー・食器のダブルチェック徹底</div>
+          <div class="notice-body">配膳時はアレルギー情報と食器指定（金城さんのフォーク禁止など）を必ず指差し確認。葛野さんの金属アレルギーには専用青マグカップで対応。取り違えは重大事故につながります。</div>
+        </div>
+      </div>
+      <div class="notice-card">
+        <div class="notice-icon" style="background:var(--teal-50);color:var(--teal-800);">↔</div>
+        <div>
+          <div class="notice-title">柔軟な連携とバックアップ</div>
+          <div class="notice-body">準備リーダーが中村さん対応に専念している場合、他の職員は自発的にフォローへ。田中久・白澤さん等へのトレー配膳が滞らないよう、状況を常に把握し自発的に動いてください。</div>
+        </div>
+      </div>
+      <div class="notice-card">
+        <div class="notice-icon" style="background:var(--blue-50);color:var(--blue-800);">✓</div>
+        <div>
+          <div class="notice-title">喫食状況は「その都度」即時記入</div>
+          <div class="notice-body">「後で書く」は漏れの原因。喫食状況の記録は利用者の健康変化を察知する重要データです。配膳後すぐに記入することを徹底してください。</div>
+        </div>
+      </div>
+      <div class="notice-card">
+        <div class="notice-icon" style="background:var(--amber-50);color:var(--amber-800);">▲</div>
+        <div>
+          <div class="notice-title">容器（青マグ1・2）の取り違え防止</div>
+          <div class="notice-body">「青マグカップ1」と「青マグカップ2（温茶・冷茶）」は用途が異なります。洗剤の残りや容器の取り違えがないよう、配膳前に必ず目視確認してください。</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<div class="page-footer">
+  給食時業務マニュアル ― 誤食・事故防止のため各事項を厳守してください
+</div>
+
+<script>
+function switchTab(id, btn) {
+  document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+  document.querySelectorAll('.panel').forEach(p => p.classList.remove('active'));
+  btn.classList.add('active');
+  document.getElementById('tab-' + id).classList.add('active');
+}
+
+document.addEventListener('click', function(e) {
+  if (e.target.classList.contains('chk')) {
+    e.target.classList.toggle('checked');
+  }
+});
+</script>
+
+
+</body></html>
